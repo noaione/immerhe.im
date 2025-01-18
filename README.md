@@ -1,10 +1,10 @@
 # immerhe.im
 
-![Cecilia Winding Up](https://raw.githubusercontent.com/noaione/immerhe.im/refs/heads/master/assets/images/cecilia.png)
+<img src="https://raw.githubusercontent.com/noaione/immerhe.im/refs/heads/master/assets/images/cecilia.png" alt="Cecilia Winding Up" title="Cecilia Winding Up" height="192" />
 
-Hometown of [Cecilia Immergreen](https://www.youtube.com/@holoen_ceciliaimmergreen)
+https://immerhe.im/ — Hometown of [Cecilia Immergreen](https://www.youtube.com/@holoen_ceciliaimmergreen)
 
-Made with [Nuxt](https://nuxt.com/) and [Tailwind](https://tailwindcss.com/).
+Don't forget to wind her up by clicking on her!
 
 ## Installation
 1. Install [Bun](https://bun.sh/)
@@ -23,3 +23,5 @@ Or, if you want dev server
 ## Credits
 - "[Cecilia Immergreen](https://www.youtube.com/@holoen_ceciliaimmergreen) from hololive English" as the character being shown here
 - [akashibag](https://x.com/akashibag/status/1803460334260306199) for the animated art
+
+Made with [Nuxt](https://nuxt.com/) and [Tailwind](https://tailwindcss.com/).
