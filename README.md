@@ -1,75 +1,23 @@
-# Nuxt Minimal Starter
+# immerhe.im
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Hometown of [Cecilia Immergreen](https://www.youtube.com/@holoen_ceciliaimmergreen)
 
-## Setup
+Built with [Bun](https://bun.sh/)
 
-Make sure to install dependencies:
+## Installation
+1. Install [Bun](https://bun.sh/)
+2. Run `bun install`
+3. Run `bun generate`
+4. Host the `dist` folder
 
-```bash
-# npm
-npm install
+Or, if you want dev server
 
-# pnpm
-pnpm install
+1. Run with `bun dev`
 
-# yarn
-yarn install
+## License
 
-# bun
-bun install
-```
+[MIT License](LICENSE)
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Credits
+- "[Cecilia Immergreen](https://www.youtube.com/@holoen_ceciliaimmergreen) from hololive English" as the character being shown here
+- [akashibag](https://x.com/akashibag/status/1803460334260306199) for the animated art
