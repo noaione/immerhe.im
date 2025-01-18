@@ -3,7 +3,7 @@
     <p v-if="error" class="mx-1 text-red-500">{{ error }}</p>
 
     <p v-else class="font-semibold text-cecilia-800">
-      Total bounces:
+      Total speen:
       <span class="font-bold text-cecilia-900">
         <span ref="counter">0</span>
         <span ref="counterSpoof" class="hidden">0</span>

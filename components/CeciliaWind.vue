@@ -1,94 +1,101 @@
 <template>
-  <img
-    ref="hook"
-    src="/assets/images/cecilia.png"
-    class="size-72 cursor-pointer object-contain object-center"
-    alt="CeciliaWind"
-    title="Click her!"
-  />
+  <div class="relative size-72 flex-shrink-0 cursor-pointer" @click="onClickLoopAnimation">
+    <img
+      ref="frame1"
+      src="~/assets/images/ceci-frame01.png?inline"
+      class="ceci-stack-frame z-[2]"
+      alt="CeciliaWind Frame 1"
+      title="Click her!"
+    />
+    <img
+      ref="frame2"
+      src="~/assets/images/ceci-frame02.png?inline"
+      class="ceci-stack-frame z-[3]"
+      alt="CeciliaWind Frame 2"
+      title="Click her!"
+      style="display: none"
+    />
+    <img
+      ref="frame3"
+      src="~/assets/images/ceci-frame03.png?inline"
+      class="ceci-stack-frame z-[4]"
+      alt="CeciliaWind Frame 3"
+      title="Click her!"
+      style="display: none"
+    />
+    <img
+      ref="frame4"
+      src="~/assets/images/ceci-frame04.png?inline"
+      class="ceci-stack-frame z-[5]"
+      alt="CeciliaWind Frame 4"
+      title="Click her!"
+      style="display: none"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
-const emits = defineEmits<{
-  currentCount: [count: number];
-}>();
+const activeFrame = ref(0);
+const frameReady = ref(false);
+const frame1 = ref<HTMLImageElement>();
+const frame2 = ref<HTMLImageElement>();
+const frame3 = ref<HTMLImageElement>();
+const frame4 = ref<HTMLImageElement>();
 
-const hook = ref<HTMLImageElement>();
-
-const bounceReset = ref<NodeJS.Timeout>();
-const bounceAnim = ref<NodeJS.Timeout>();
-const bounceQueue = ref<number[]>([]);
-
-function publish() {
+function spinComplete() {
   if (window.plausible) {
-    window.plausible("cecilia");
+    window.plausible("CeciliaWind");
   }
 }
 
-function bouncy() {
-  if (!hook.value) {
-    bounceReset.value = setTimeout(bouncy, 100);
+function toggleFrame(frame: HTMLImageElement, hideFrames: HTMLImageElement[]) {
+  frame.style.display = "block";
 
-    return;
-  }
-
-  if (hook.value.classList.contains("animate-cecilia")) {
-    bounceReset.value = setTimeout(bouncy, 100);
-
-    return;
-  }
-
-  // Check if queue is empty
-  if (bounceQueue.value.length === 0) {
-    bounceReset.value = setTimeout(bouncy, 100);
-
-    return;
-  }
-
-  const { value } = hook;
-
-  value.classList.add("animate-cecilia");
-  publish();
-  bounceAnim.value = setTimeout(() => {
-    value.classList.remove("animate-cecilia");
-    bounceQueue.value.shift();
-    emits("currentCount", bounceQueue.value.length);
-
-    nextTick(() => {
-      setTimeout(bouncy, 50);
-    });
-  }, 1500);
+  hideFrames.forEach((f) => {
+    f.style.display = "none";
+  });
 }
 
-function queueBounce() {
-  if (!hook.value) {
+function showFrame(frame: number) {
+  if (frame < 0 || frame > 3) {
     return;
   }
 
-  bounceQueue.value.push(1);
-  emits("currentCount", bounceQueue.value.length);
+  switch (frame) {
+    case 0:
+      spinComplete();
+      toggleFrame(frame1.value!, [frame4.value!, frame2.value!, frame3.value!]);
+      break;
+    case 1:
+      toggleFrame(frame2.value!, [frame1.value!, frame3.value!, frame4.value!]);
+      break;
+    case 2:
+      toggleFrame(frame3.value!, [frame1.value!, frame2.value!, frame4.value!]);
+      break;
+    case 3:
+      toggleFrame(frame4.value!, [frame1.value!, frame2.value!, frame3.value!]);
+      break;
+    default:
+      break;
+  }
+}
+
+function onClickLoopAnimation() {
+  if (!frameReady.value) {
+    return;
+  }
+
+  const nextFrame = (activeFrame.value + 1) % 4;
+
+  activeFrame.value = nextFrame;
+
+  showFrame(nextFrame);
 }
 
 onMounted(() => {
-  // On click, queue bouncing cecilia
-  hook.value?.addEventListener("click", queueBounce);
-
-  // Bounce cecilia every 1.5 seconds
-  emits("currentCount", 0);
-  bouncy();
-});
-
-onBeforeUnmount(() => {
-  // Remove event listener
-  hook.value?.removeEventListener("click", queueBounce);
-
-  // Remove timers
-  if (bounceReset.value) {
-    clearTimeout(bounceReset.value);
-  }
-
-  if (bounceAnim.value) {
-    clearTimeout(bounceAnim.value);
+  if (frame1.value && frame2.value && frame3.value && frame4.value) {
+    console.log("Cecilia is now ready to be speen!");
+    frameReady.value = true;
   }
 });
 
@@ -103,6 +110,10 @@ declare global {
 .animate-cecilia {
   /* Only bounce one time */
   animation: cecilia 1.5s ease-out 1;
+}
+
+.ceci-stack-frame {
+  @apply absolute left-0 top-0 size-full cursor-pointer object-contain object-center;
 }
 
 @keyframes cecilia {

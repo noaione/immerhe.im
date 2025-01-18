@@ -2,7 +2,7 @@
   <div class="h-screen">
     <div class="flex h-full items-center justify-center">
       <div class="flex flex-col items-center justify-center">
-        <CeciliaWind @current-count="counter = $event" />
+        <CeciliaWind />
         <div class="mt-2">
           <a
             class="text-lg font-bold text-cecilia-900 underline decoration-dashed hover:decoration-solid"
@@ -27,18 +27,9 @@
             </a>
           </p>
         </div>
-        <div class="mt-1">
-          <p class="font-semibold text-cecilia-800">
-            Queued: <span class="font-bold text-cecilia-900">{{ counter.toLocaleString() }}</span>
-          </p>
-        </div>
         <GlobalCounter />
       </div>
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const counter = ref(0);
-</script>
 
