@@ -32,6 +32,7 @@
             Queued: <span class="font-bold text-cecilia-900">{{ counter.toLocaleString() }}</span>
           </p>
         </div>
+        <GlobalCounter />
       </div>
     </div>
   </div>

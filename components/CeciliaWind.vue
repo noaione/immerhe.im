@@ -2,7 +2,7 @@
   <img
     ref="hook"
     src="/assets/images/cecilia.png"
-    class="size-[70%] object-contain object-center"
+    class="size-72 cursor-pointer object-contain object-center"
     alt="CeciliaWind"
     title="Click her!"
   />
