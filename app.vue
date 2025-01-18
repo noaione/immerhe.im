@@ -4,6 +4,17 @@
       <div class="flex flex-col items-center justify-center">
         <CeciliaWind @current-count="counter = $event" />
         <div class="mt-2">
+          <a
+            class="text-lg font-bold text-cecilia-900 underline decoration-dashed hover:decoration-solid"
+            href="https://www.youtube.com/@holoen_ceciliaimmergreen"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Cecilia Immergreen
+          </a>
+        </div>
+        <hr class="mt-2 w-full border-b-[1px] border-dotted border-cecilia-800" />
+        <div class="mt-1">
           <p class="font-semibold text-cecilia-800">
             Art by
             <a

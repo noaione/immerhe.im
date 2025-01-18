@@ -107,7 +107,7 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: "https://tr.n4o.xyz/js/37a79777T080eR4f52A99e2Ica9619a85a5d.js",
+          src: "https://tr.n4o.xyz/js/025ec81T16b52R2918614L76c3885N5e34995459.js",
           defer: true,
           async: true,
           "data-domain": "immerhe.im",

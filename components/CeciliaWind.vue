@@ -1,5 +1,11 @@
 <template>
-  <img ref="hook" src="/assets/images/cecilia.png" class="size-[70%] object-contain object-center" alt="CeciliaWind" />
+  <img
+    ref="hook"
+    src="/assets/images/cecilia.png"
+    class="size-[70%] object-contain object-center"
+    alt="CeciliaWind"
+    title="Click her!"
+  />
 </template>
 
 <script setup lang="ts">
