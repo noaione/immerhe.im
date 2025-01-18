@@ -1,8 +1,10 @@
 # immerhe.im
 
+![Cecilia Winding Up](https://raw.githubusercontent.com/noaione/immerhe.im/refs/heads/master/assets/images/cecilia.png)
+
 Hometown of [Cecilia Immergreen](https://www.youtube.com/@holoen_ceciliaimmergreen)
 
-Built with [Bun](https://bun.sh/)
+Made with [Nuxt](https://nuxt.com/) and [Tailwind](https://tailwindcss.com/).
 
 ## Installation
 1. Install [Bun](https://bun.sh/)
