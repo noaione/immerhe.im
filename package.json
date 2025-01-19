@@ -1,7 +1,8 @@
 {
-  "name": "nuxt-app",
+  "name": "immerhe.im",
   "private": true,
   "type": "module",
+  "version": "0.1.1",
   "license": "MIT",
   "scripts": {
     "build": "nuxt build",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
+    "@headlessui/tailwindcss": "^0.2.1",
     "@nuxt/kit": "^3.15.2",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@stylistic/eslint-plugin": "^2.13.0",
@@ -33,6 +35,7 @@
     "eslint-plugin-unicorn": "^56.0.1",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.14.0",
+    "nuxt-headlessui": "^1.2.0",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.10",

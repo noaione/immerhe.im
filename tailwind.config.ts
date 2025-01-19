@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import huiPlugin from "@headlessui/tailwindcss";
 
 export default {
   content: [
@@ -25,9 +26,9 @@ export default {
           800: "#119357",
           900: "#0C693E",
           950: "#08492B",
-        }
-      }
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [huiPlugin],
 } as Partial<Config>;

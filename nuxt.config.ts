@@ -1,8 +1,10 @@
+import packageJson from "./package.json";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-headlessui"],
   routeRules: {
     "/": { prerender: true },
   },
@@ -114,6 +116,15 @@ export default defineNuxtConfig({
           "data-api": "https://tr.n4o.xyz/magic/18c5dcddMc036A4d1dGb785Iaa2e310238c9",
         },
       ],
+    },
+  },
+  headlessui: {
+    prefix: "HUI",
+  },
+  runtimeConfig: {
+    public: {
+      version: packageJson.version,
+      commitSha: import.meta.env.COMMIT_SHA || process.env.COMMIT_SHA,
     },
   },
 });

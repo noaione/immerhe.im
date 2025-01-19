@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: |
           bun install
+      - name: Configure
+        run: |
+          echo "COMMIT_SHA=$(git rev-parse HEAD)" >> .env
       - name: Build static
         run: bun generate
       - name: Upload Pages artifact
