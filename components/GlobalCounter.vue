@@ -28,6 +28,8 @@ const error = ref<string>("");
 const counter = ref<HTMLSpanElement>();
 const counterSpoof = ref<HTMLSpanElement>();
 
+const { autoRefresh } = useConfig();
+
 // format the number
 const actualFormatter = (value: number) => value.toLocaleString();
 
@@ -52,7 +54,11 @@ function animate(number: number) {
   }
 }
 
-async function animateLoop() {
+async function animateLoop(force = false) {
+  if (!autoRefresh.value && !force) {
+    return;
+  }
+
   try {
     const data = await fetch("https://immerheim-stats.n4o.workers.dev/counter");
     const jsonData: CounterData = await data.json();
@@ -74,7 +80,7 @@ async function animateLoop() {
 }
 
 onMounted(async () => {
-  await animateLoop();
+  await animateLoop(true);
 
   intervalLock.value = setInterval(animateLoop, 10000);
 });
