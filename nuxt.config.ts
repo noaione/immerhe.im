@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { prerender: true },
   },
+  sourcemap: {
+    client: true,
+  },
   nitro: {
     prerender: {
       crawlLinks: true,
